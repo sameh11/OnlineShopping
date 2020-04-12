@@ -1,0 +1,31 @@
+{
+  "name": "atest",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "seed": "node models/seeds.js",
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "@hapi/joi": "latest",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "latest",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "express-validation": "^3.0.2",
+    "http-errors": "~1.6.3",
+    "joi-objectid": "^3.0.1",
+    "mongoose": "^5.9.7",
+    "mongoose-seed": "^0.6.0",
+    "morgan": "~1.9.1",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "pug": "2.0.0-beta11"
+  },
+  "devDependencies": {
+    "connect-flash": "^0.1.1",
+    "express-session": "^1.17.0",
+    "session": "^0.1.0"
+  }
+}
