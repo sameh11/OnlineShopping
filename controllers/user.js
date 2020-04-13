@@ -26,7 +26,7 @@ exports.getUsers = async (req, res, next) => {
 
 exports.createUser = async (req, res, next) => {
     const {error} = validateUser(getUserParams(req.body));
-    if (error){
+    if (error) {
         return res.status(400).send(error);
     }
 
@@ -46,23 +46,24 @@ exports.createUser = async (req, res, next) => {
 
 ///TODO refactor password Update
 exports.editUser = async (req, res, next) => {
+    const userEdit = getUserParams(req.body);
     const {error} = validateUser(getUserParams(req.body));
-    if (error) res.status(400).send(error);
-
-    console.log(req.body.id);
-    let id = new ObjectId(req.body.id);
-    let editedUser = new User({"_id": id, ...getUserParams(req.body)});
-
-    await User.findOneAndUpdate({"_id": id}, editedUser)
-        .then(updated => {
-            if (!updated) res.status(400).send(updated);
-            let newUser;
-            if (updated) {
-                newUser = User.findOne(id);
-                res.status(200).send(newUser)
-            };
-        })
-        .catch(error => res.status(500).send(error));
+    if (error) {
+        return res.status(400).send(error);
+    }
+    let query = {_id:req.user.id};
+    let usr = User.findById(query, function (error,user) {
+        if (error){
+            console.log(`err:: ${error}`);
+            res.send(error)
+        }
+        if (user){
+            console.log(`data:: ${user}`);
+            user.overwrite(userEdit);
+            user.save();
+            res.send(user)
+        }
+    });
 };
 
 exports.getProductsById = async (req, res, next) => {
