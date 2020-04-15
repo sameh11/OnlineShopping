@@ -35,7 +35,7 @@ router.get("/logout", function (req, res) {
 router.post('/create', UserController.createUser);
 // router.post('/:id/edit', productController.editProduct);
 // router.post('/:id/delete', productController.deleteProduct);
-router.post("/edit", ensureAuthenticated, UserController.editUser);
+router.post("/edit", UserController.editUser);
 
 router.use(function (req, res, next) {
     res.locals.currentUser = req.user;
