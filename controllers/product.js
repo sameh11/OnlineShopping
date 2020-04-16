@@ -1,7 +1,7 @@
 const Product = require('../models/product');
 const validateProduct = require('../validations/validateProduct');
 const mongoose = require('mongoose');
-const ObjectId = mongoose.Types.ObjectId;
+const ObjectId = require('mongoose').Types.ObjectId;
 
 getProductParams = (body) => {
     return {
@@ -25,54 +25,56 @@ exports.createProduct = async (req, res, next) => {
     await newProduct.save()
         .then(
             saved => {
-                if (!saved) res.status(400);
-                if (saved) res.status(201).send(productProduct);
+                if (!saved) res.status(500).send("Oops something went wrong with the data base");
+                if (saved) res.status(200).send(newProduct);
             }
         )
         .catch(
             error => {
-                return res.status(300).json(error);
+                return res.status(500).send("Oops something went wrong while saving");
             }
         );
 };
 
 exports.editProduct = async (req, res, next) => {
+    if (!isObjectIdValid(req.params.id)) {
+        return res.status(400).error("bad request, invalid id");
+    }
     let id = new ObjectId(req.params.id);
+
     const {error} = validateProduct(getProductParams(req.body));
     if (error) {
-        return res.status(400).send(error.details);
+        return res.status(400).send(`invalid request : ${error.details}`);
     }
-
     let newProduct = new Product({"_id": id, ...getProductParams(req.body)});
-    // console.log(new Product({"_id": id, ...getProductParams(req.body)}));
-    await Product.findOneAndUpdate({"_id": id}, newProduct)
-        .then(
-            saved => {
-                if (!saved) res.status(400);
-                if (saved) res.status(201).send(newProduct);
-            }
-        )
-        .catch(
-            error => {
-                console.log(error);
-                return res.status(400, error).send(error);
-            }
-        );
+
+    await Product.findById({"_id": id}, (error , product)=>{
+        if (error){
+            res.status(400).send("not found");
+        }
+        if (product){
+            product.overwrite(newProduct);
+            product.save();
+            res.status(200).send(product)
+        }
+    })
 };
 
 exports.deleteProduct = async (req, res, next) => {
+    if (!isObjectIdValid(req.params.id)) {
+        return res.status(500).error("bad request, invalid id");
+    }
     let id = new ObjectId(req.params.id);
+
     await Product.findByIdAndRemove(id, {useFindAndModify: false})
         .then(
             deleted => {
-                if (!deleted) res.status(404).send(`this id is not found`);
-                if (deleted) res.status(201).send(`object : ${deleted} :: deleted successfully `);
+                if (!deleted) res.status(400).send(`this id is not found`);
+                if (deleted) res.status(200).send(`object : ${deleted} :: deleted successfully `);
             }
         )
         .catch(
             error => {
-                console.log(error);
-
                 return res.status(300).json(error);
             }
         );
@@ -123,16 +125,23 @@ exports.getProductsByStatus = async (req, res, next) => {
 };
 
 exports.getProductsById = async (req, res, next) => {
-    const products = await Product.find({_id: req.params.id})
-        .sort({createdAt: "descending"})
-        .exec(function (err, data) {
-            if (err) {
-                console.log(err);
-                return next(err);
-            }
-            res.send(data);
-        });
+    if (!isObjectIdValid(req.params.id)) {
+        return res.status(400).send("bad request, invalid id");
+    }
+    const products = await Product.findById({_id: req.params.id})
+    if (!products) res.status(400).send("product not found");
+    res.status(200).send(products);
 };
 
 
-
+function isObjectIdValid(id) {
+    if (ObjectId.isValid(id)) {
+        if (String(new ObjectId(id)) === id) {
+            return true
+        } else {
+            return false
+        }
+    } else {
+        return false
+    }
+}

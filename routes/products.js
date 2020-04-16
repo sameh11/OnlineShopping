@@ -8,7 +8,7 @@ router.get('/:name', productController.getProductsByName);
 router.get('/:category', productController.getProductsByCategory);
 router.get('/:status', productController.getProductsByStatus);
 router.post('/new', productController.createProduct);
-router.post('/:id/edit', productController.editProduct);
-router.post('/:id/delete', productController.deleteProduct);
+router.post('/edit/:id', productController.editProduct);
+router.post('/delete/:id', productController.deleteProduct);
 
 module.exports = router;
