@@ -21,8 +21,8 @@ mongoose.connect(mongoURL, {
 }).then(() => console.log('Connected to MongoDB...')).catch(err => console.log('Failed to connect to Mongodb,', err.message));
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+// app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'pug');
 setUpPassport();
 app.use(logger('dev'));
 app.use(express.json());

@@ -1,5 +1,5 @@
 const Product = require('../models/product');
-const validateProduct = require('../validations/validateProduct');
+const validateProduct = require('../models/validations/validateProduct');
 const mongoose = require('mongoose');
 const ObjectId = require('mongoose').Types.ObjectId;
 

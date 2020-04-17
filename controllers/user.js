@@ -1,6 +1,6 @@
 const User = require('../models/user');
 const mongoose = require('mongoose');
-const validateUser = require('../validations/validateUser');
+const validateUser = require('../models/validations/validateUser');
 const ObjectId = require('mongoose').Types.ObjectId;
 
 const getUserParams = (body) => {

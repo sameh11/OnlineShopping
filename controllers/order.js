@@ -1,5 +1,5 @@
 const Order = require('../models/order');
-const validateOrder = require('../validations/validateOrders');
+const validateOrder = require('../models/validations/validateOrders');
 const mongoose = require('mongoose');
 const ObjectId = mongoose.Types.ObjectId;
 
