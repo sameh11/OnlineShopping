@@ -41,7 +41,11 @@ app.use(passport.session());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+//TODO Add pagination to products
 app.use('/products', productRouter);
+//TODO Refactor orders routing
+//TODO Add auth, admin, objectid validation
+//TODO Add integrated tests for some orders routes
 // app.use('/orders', ordersRouter);
 
 // catch 404 and forward to error handler

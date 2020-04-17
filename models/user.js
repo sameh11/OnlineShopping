@@ -27,10 +27,10 @@ const userSchema = new mongoose.Schema({
     createdAt: {type: Date, default: Date.now()},
     deletedAt: {type: Date},
     editeddAt: {type: Date},
+    isAdmin: {type: Boolean, default: false},
 });
 const noop = function () {
 };
-
 userSchema.pre("save", function (done) {
     var user = this;
     if (!user.isModified("password")) {
@@ -70,13 +70,11 @@ userSchema.pre("findOneAndUpdate", function (done) {
 userSchema.methods.name = function () {
     return this.displayName || this.username;
 };
-
 userSchema.methods.checkPassword = function (guess, done) {
     bcrypt.compare(guess, this.password, function (err, isMatch) {
         done(err, isMatch);
     });
 };
-
 let User = mongoose.model("User", userSchema);
 module.exports = User;
 
