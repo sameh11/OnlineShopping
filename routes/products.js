@@ -1,7 +1,18 @@
 const express = require('express');
 let productController = require('../controllers/product');
 const router = express.Router();
+const passport = require("passport");
+const admin = require('./middlewares/admin')
+const validateObjectID = require('./middlewares/validateObjectId')
 
+function ensureAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) {
+        next();
+    } else {
+        req.flash("info", "You must be logged in to see this page.");
+        res.status(400).send({'error': 'not authenticated'});
+    }
+}
 router.get('/', productController.getProducts);
 router.get('/:id', productController.getProductsById);
 router.get('/:name', productController.getProductsByName);

@@ -1,11 +1,11 @@
 module.exports = function (req, res, next)  {
     if (ObjectId.isValid(req.params.id)) {
         if (String(new ObjectId(req.params.id)) === req.params.id) {
-            return true
+            next()
         } else {
-            return false
+            return res.status(400).send('invalid id')
         }
     } else {
-        return false
+        return res.status(400).send('invalid id')
     }
 }

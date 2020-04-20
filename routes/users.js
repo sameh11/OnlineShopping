@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const passport = require("passport");
-const admin = require('middlewares/admin')
-const validateObjectID = require('middlewares/validateObjectId')
+const admin = require('./middlewares/admin')
+const validateObjectID = require('./middlewares/validateObjectId')
 
 function ensureAuthenticated(req, res, next) {
     if (req.isAuthenticated()) {
