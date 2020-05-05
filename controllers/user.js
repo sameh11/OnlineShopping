@@ -10,6 +10,7 @@ const getUserParams = (body) => {
         email: body.email,
         password: body.password,
         gender: body.gender,
+        isAdmin:body.isAdmin
     }
 };
 

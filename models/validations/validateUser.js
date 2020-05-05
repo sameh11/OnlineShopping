@@ -7,7 +7,8 @@ const userSchema = Joi.object({
     email: Joi.string().required(),
     password: Joi.string().required(),
     gender: Joi.string().valid('MALE', 'FEMALE', 'Other').default('Other'),
-    image:  Joi.array()
+    image:  Joi.array(),
+    isAdmin: Joi.boolean()
 });
 
 const validateUser = User => userSchema.validate(User,{ abortEarly: false });

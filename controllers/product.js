@@ -2,6 +2,7 @@ const Product = require('../models/product');
 const validateProduct = require('../models/validations/validateProduct');
 const mongoose = require('mongoose');
 const ObjectId = require('mongoose').Types.ObjectId;
+let imgPort = 'http://localhost:3000';
 
 getProductParams = (body) => {
     return {
@@ -48,17 +49,44 @@ exports.editProduct = async (req, res, next) => {
     }
     let newProduct = new Product({"_id": id, ...getProductParams(req.body)});
 
-    await Product.findById({"_id": id}, (error , product)=>{
-        if (error){
+    await Product.findById({"_id": id}, (error, product) => {
+        if (error) {
             res.status(400).send("not found");
         }
-        if (product){
+        if (product) {
             product.overwrite(newProduct);
             product.save();
             res.status(200).send(product)
         }
     })
 };
+
+exports.uploadImage = async (req,res,next) => {
+    if (!isObjectIdValid(req.params.id)) {
+        return res.status(400).error("bad request, invalid id");
+    }
+    let id = new ObjectId(req.params.id);
+
+    let image_error;
+    if (req.file) {
+        console.log(req.file)
+        let file = {
+            image: imgPort + '/uploads/' + req.file.filename
+        };
+        let data = await file.save();
+    }
+    else {
+        return res.status(400).send({image_error: "no image uploaded"});
+    }
+    await Product.findByIdAndUpdate(id, { $set: file}, {useFindAndModify: false})
+        .then(deleted => {
+                if (!deleted) res.status(400).send(`this id is not found`);
+                if (deleted) res.status(200).send(`object : ${deleted} :: deleted successfully `);
+            })
+        .catch(error => {
+                return res.status(300).json(error);
+            });
+}
 
 exports.deleteProduct = async (req, res, next) => {
     if (!isObjectIdValid(req.params.id)) {

@@ -30,26 +30,24 @@ router.post('/edit/:id', [admin, ensureAuthenticated, validateObjectID], UserCon
 router.post('/delete/:id', [admin, ensureAuthenticated, validateObjectID], UserController.deleteUser);
 router.post('/create', [admin, ensureAuthenticated, validateObjectID], UserController.createUser);
 router.post('/auth/register', UserController.createUser, function (req, res, next) {
-    passport.authenticate('login', function (err, user, info) {
+    passport.authenticate('local', function (err, user, info) {
         if (info) {return res.status(400).send(info)}
         if (err) return res.status(400).send(err);
-        req.logIn(user, function (err) {
-            if (err) {
-                return res.status(400).send(`${err}`);
-            }
-            return res.status(200).send(user);
+        req.login(user, function (err) {
+            if (err) return res.status(400).send(`${err}`);
+            res.status(200).json({"statusCode" : 200 ,"user" : req.user});
+            // next()
         });
     })(req, res, next);
 });
 router.post("/auth/login", function (req, res, next) {
-    passport.authenticate('login', function (err, user, info) {
+    passport.authenticate('local', function (err, user, info) {
         if (info) {return res.status(400).send(info)}
         if (err) return res.status(400).send(err);
-        req.logIn(user, function (err) {
-            if (err) {
-                return res.status(400).send(`${err}`);
-            }
-            return res.status(200).send(user);
+        req.login(user, function (err) {
+            if (err) return res.status(400).send(`${err}`);
+            res.status(200).json({"statusCode" : 200 ,"user" : req.user});
+            // next()
         });
     })(req, res, next);
 });
