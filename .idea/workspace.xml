@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:OnlineShopping" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9e5a4a9a-e97c-4133-b8e4-e99b64322a15" name="Default Changelist" comment="update - added JWT middleware" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="sameh11 &lt;sameh.hamza11@gmail.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master-old" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectId" id="1aJte2zFQyIxWMCLPOhQStIGyoR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="editorconfig.notification" value="lf;" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.16.1" />
+    <property name="last_opened_file_path" value="$USER_HOME$/OneDrive/Desktop/17 - Components" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/node_modules/mocha" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.3.4\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\ITI\Angular\practice\atest\models" />
+      <recent name="D:\ITI\Angular\practice\atest\routes" />
+      <recent name="D:\ITI\Angular\practice\atest\middlewares" />
+      <recent name="D:\ITI\Angular\practice\atest\tests" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ITI\Angular\practice\atest\validations" />
+      <recent name="D:\ITI\Angular\practice\atest\routes" />
+      <recent name="D:\ITI\Angular\practice\atest\models" />
+      <recent name="D:\ITI\Angular\practice\atest\controllers" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.start">
+    <configuration name="seed" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="seed" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="Product./GET/:id Product by id" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>SUITE</test-kind>
+      <test-file>$PROJECT_DIR$/tests/product.test.js</test-file>
+      <test-names>
+        <name value="Product" />
+        <name value="/GET/:id Product by id" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="USER./GET/:id Product by id" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>SUITE</test-kind>
+      <test-file>$PROJECT_DIR$/tests/user.test.js</test-file>
+      <test-names>
+        <name value="USER" />
+        <name value="/GET/:id Product by id" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="USER./GET/:id user by id" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>SUITE</test-kind>
+      <test-file>$PROJECT_DIR$/tests/user.test.js</test-file>
+      <test-names>
+        <name value="USER" />
+        <name value="/GET/:id user by id" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+        <item itemvalue="Mocha.USER./GET/:id user by id" />
+        <item itemvalue="npm.seed" />
+        <item itemvalue="Mocha.Product./GET/:id Product by id" />
+        <item itemvalue="Mocha.USER./GET/:id Product by id" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9e5a4a9a-e97c-4133-b8e4-e99b64322a15" name="Default Changelist" comment="" />
+      <created>1586465615328</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586465615328</updated>
+      <workItem from="1586465634918" duration="4036000" />
+      <workItem from="1586551727243" duration="43843000" />
+      <workItem from="1586709606240" duration="17361000" />
+      <workItem from="1586731733995" duration="1329000" />
+      <workItem from="1586785631351" duration="14265000" />
+      <workItem from="1586812103129" duration="1369000" />
+      <workItem from="1586883981691" duration="754000" />
+      <workItem from="1586968146180" duration="2694000" />
+      <workItem from="1586986880992" duration="18230000" />
+      <workItem from="1587009137399" duration="12220000" />
+      <workItem from="1587138236293" duration="10622000" />
+      <workItem from="1587157425106" duration="1324000" />
+      <workItem from="1587159728293" duration="620000" />
+      <workItem from="1587258216872" duration="700000" />
+      <workItem from="1587316549033" duration="9952000" />
+      <workItem from="1587399624387" duration="1472000" />
+      <workItem from="1587422345077" duration="1263000" />
+      <workItem from="1587437637576" duration="630000" />
+      <workItem from="1587506643963" duration="2349000" />
+      <workItem from="1587688052661" duration="13553000" />
+      <workItem from="1588002797187" duration="8082000" />
+      <workItem from="1588282823536" duration="1946000" />
+      <workItem from="1588361956422" duration="637000" />
+      <workItem from="1588452245846" duration="45000" />
+      <workItem from="1588652531315" duration="1921000" />
+      <workItem from="1588698706279" duration="4209000" />
+      <workItem from="1588715211475" duration="12372000" />
+    </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <created>1586732315469</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1586732315470</updated>
+    </task>
+    <task id="LOCAL-00002" summary="update - Edit User">
+      <created>1586811433378</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1586811433378</updated>
+    </task>
+    <task id="LOCAL-00003" summary="new : mocha, chi, superTest&#10;new : product route test &#10;update : product controller route&#10;update : routes paths">
+      <created>1587007513235</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1587007513235</updated>
+    </task>
+    <task id="LOCAL-00004" summary="security issues fix from previous commit">
+      <created>1587009556627</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1587009556627</updated>
+    </task>
+    <task id="LOCAL-00005" summary="trying to fix pachage-lock">
+      <created>1587010296305</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1587010296305</updated>
+    </task>
+    <task id="LOCAL-00006" summary="trying to fix pachage-lock">
+      <created>1587010709202</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1587010709202</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Revert &quot;sysnc&quot;&#10;&#10;This reverts commit 48f8733d">
+      <created>1587060614328</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1587060614328</updated>
+    </task>
+    <task id="LOCAL-00008" summary="update - user controller logic refactor&#10;update - user model isAdmin property&#10;new    - authentication middleware &#10;new    - is admin middleware &#10;update - added authentication to product routes&#10;update - added authentication to user routes&#10;new    - some user integrated test &#10;update - TODO commments on routes">
+      <created>1587148083932</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1587148083932</updated>
+    </task>
+    <task id="LOCAL-00009" summary="update - file structure">
+      <created>1587148800465</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1587148800465</updated>
+    </task>
+    <task id="LOCAL-00010" summary="update - router fix">
+      <created>1587341503928</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1587341503928</updated>
+    </task>
+    <task id="LOCAL-00011" summary="update - registration and login">
+      <created>1587350805459</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1587350805459</updated>
+    </task>
+    <task id="LOCAL-00012" summary="update - server log&#10;update - product image upload&#10;update - user isadmin role&#10;update - more seeds added to products&#10;update - user authentication&#10;update - added cors to routes">
+      <created>1588710878814</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1588710878814</updated>
+    </task>
+    <task id="LOCAL-00013" summary="update - added JWT for authentication">
+      <created>1588730197653</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1588730197653</updated>
+    </task>
+    <task id="LOCAL-00014" summary="update - added JWT middleware">
+      <created>1588730264939</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1588730264939</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit" />
+    <MESSAGE value="update - Edit User" />
+    <MESSAGE value="new : mocha, chi, superTest&#10;new : product route test &#10;update : product controller route&#10;update : routes paths" />
+    <MESSAGE value="security issues fix from previous commit" />
+    <MESSAGE value="trying to fix pachage-lock" />
+    <MESSAGE value="Revert &quot;sysnc&quot;&#10;&#10;This reverts commit 48f8733d" />
+    <MESSAGE value="update - user controller logic refactor&#10;update - user model isAdmin property&#10;new    - authentication middleware &#10;new    - is admin middleware &#10;update - added authentication to product routes&#10;update - added authentication to user routes&#10;new    - some user integrated test &#10;update - TODO commments on routes" />
+    <MESSAGE value="update - file structure" />
+    <MESSAGE value="update - router fix" />
+    <MESSAGE value="update - registration and login" />
+    <MESSAGE value="update - server log&#10;update - product image upload&#10;update - user isadmin role&#10;update - more seeds added to products&#10;update - user authentication&#10;update - added cors to routes" />
+    <MESSAGE value="update - added JWT for authentication" />
+    <MESSAGE value="update - added JWT middleware" />
+    <option name="LAST_COMMIT_MESSAGE" value="update - added JWT middleware" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="312" y="60" key="#Deployment" timestamp="1586732073478">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state x="312" y="60" key="#Deployment/0.30.1366.738/1366.30.1366.738@0.30.1366.738" timestamp="1586732073478" />
+    <state x="568" y="261" width="457" height="456" key="#Notifications" timestamp="1586813197582">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state x="568" y="261" width="457" height="456" key="#Notifications/0.30.1366.738@0.30.1366.738" timestamp="1586813197582" />
+    <state x="137" y="56" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586726426125">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state x="137" y="56" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.30.1366.738/1366.30.1366.738@0.30.1366.738" timestamp="1586726426125" />
+    <state x="92" y="122" width="1182" height="554" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1586997729376">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state x="92" y="122" width="1182" height="554" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.30.1366.738@0.30.1366.738" timestamp="1586997729376" />
+    <state x="429" y="200" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587008226815">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state x="429" y="200" key="#com.intellij.fileTypes.FileTypeChooser/0.30.1366.738@0.30.1366.738" timestamp="1587008226815" />
+    <state x="363" y="137" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1586811487686">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state x="363" y="137" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.30.1366.738@0.30.1366.738" timestamp="1586811487686" />
+    <state x="413" y="145" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587010663504">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state x="413" y="145" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.30.1366.738@0.30.1366.738" timestamp="1587010663504" />
+    <state x="1687" y="30" width="932" height="738" key="CommitChangelistDialog2" timestamp="1588737785679">
+      <screen x="1366" y="30" width="1366" height="738" />
+    </state>
+    <state x="321" y="30" width="797" height="737" key="CommitChangelistDialog2/0.30.1366.738/1366.30.1366.738@0.30.1366.738" timestamp="1588730264127" />
+    <state x="1687" y="30" key="CommitChangelistDialog2/0.30.1366.738/1366.30.1366.738@1366.30.1366.738" timestamp="1588737785679" />
+    <state x="262" y="30" width="932" height="738" key="CommitChangelistDialog2/0.30.1366.738@0.30.1366.738" timestamp="1588710877957" />
+    <state width="651" height="466" key="DebuggerActiveHint" timestamp="1587346863544">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state width="651" height="466" key="DebuggerActiveHint/0.30.1366.738/1366.30.1366.738@0.30.1366.738" timestamp="1586800033444" />
+    <state width="651" height="466" key="DebuggerActiveHint/0.30.1366.738@0.30.1366.738" timestamp="1587346863544" />
+    <state x="92" y="122" width="1182" height="554" key="DiffContextDialog" timestamp="1587011942271">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state x="92" y="122" width="1182" height="554" key="DiffContextDialog/0.30.1366.738@0.30.1366.738" timestamp="1587011942271" />
+    <state x="463" y="156" key="FileChooserDialogImpl" timestamp="1588284345284">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state x="463" y="156" key="FileChooserDialogImpl/0.30.1366.738/1366.30.1366.738@0.30.1366.738" timestamp="1588284345284" />
+    <state x="463" y="156" key="FileChooserDialogImpl/0.30.1366.738@0.30.1366.738" timestamp="1587258322810" />
+    <state x="225" y="297" width="588" height="204" key="Github.ShareDialog" timestamp="1586731497119">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state x="225" y="297" width="588" height="204" key="Github.ShareDialog/0.30.1366.738/1366.30.1366.738@0.30.1366.738" timestamp="1586731497119" />
+    <state width="1345" height="227" key="GridCell.Tab.0.bottom" timestamp="1588059614207">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state width="1345" height="251" key="GridCell.Tab.0.bottom/0.30.1366.738/1366.30.1366.738@0.30.1366.738" timestamp="1587962221678" />
+    <state width="1345" height="182" key="GridCell.Tab.0.bottom/0.30.1366.738/1366.30.1366.738@1366.30.1366.738" timestamp="1586479630985" />
+    <state width="1345" height="227" key="GridCell.Tab.0.bottom/0.30.1366.738/1428.0.1304.768@0.30.1366.738" timestamp="1588059614207" />
+    <state width="1345" height="227" key="GridCell.Tab.0.bottom/0.30.1366.738@0.30.1366.738" timestamp="1588021430964" />
+    <state width="1345" height="227" key="GridCell.Tab.0.center" timestamp="1588059614207">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state width="1345" height="251" key="GridCell.Tab.0.center/0.30.1366.738/1366.30.1366.738@0.30.1366.738" timestamp="1587962221677" />
+    <state width="1345" height="182" key="GridCell.Tab.0.center/0.30.1366.738/1366.30.1366.738@1366.30.1366.738" timestamp="1586479630985" />
+    <state width="1345" height="227" key="GridCell.Tab.0.center/0.30.1366.738/1428.0.1304.768@0.30.1366.738" timestamp="1588059614207" />
+    <state width="1345" height="227" key="GridCell.Tab.0.center/0.30.1366.738@0.30.1366.738" timestamp="1588021430964" />
+    <state width="1345" height="227" key="GridCell.Tab.0.left" timestamp="1588059614207">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state width="1345" height="251" key="GridCell.Tab.0.left/0.30.1366.738/1366.30.1366.738@0.30.1366.738" timestamp="1587962221676" />
+    <state width="1345" height="182" key="GridCell.Tab.0.left/0.30.1366.738/1366.30.1366.738@1366.30.1366.738" timestamp="1586479630984" />
+    <state width="1345" height="227" key="GridCell.Tab.0.left/0.30.1366.738/1428.0.1304.768@0.30.1366.738" timestamp="1588059614207" />
+    <state width="1345" height="227" key="GridCell.Tab.0.left/0.30.1366.738@0.30.1366.738" timestamp="1588021430964" />
+    <state width="1345" height="227" key="GridCell.Tab.0.right" timestamp="1588059614207">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state width="1345" height="251" key="GridCell.Tab.0.right/0.30.1366.738/1366.30.1366.738@0.30.1366.738" timestamp="1587962221677" />
+    <state width="1345" height="182" key="GridCell.Tab.0.right/0.30.1366.738/1366.30.1366.738@1366.30.1366.738" timestamp="1586479630985" />
+    <state width="1345" height="227" key="GridCell.Tab.0.right/0.30.1366.738/1428.0.1304.768@0.30.1366.738" timestamp="1588059614207" />
+    <state width="1345" height="227" key="GridCell.Tab.0.right/0.30.1366.738@0.30.1366.738" timestamp="1588021430964" />
+    <state width="1345" height="227" key="GridCell.Tab.1.bottom" timestamp="1588059614208">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state width="1345" height="227" key="GridCell.Tab.1.bottom/0.30.1366.738/1366.30.1366.738@0.30.1366.738" timestamp="1586800062616" />
+    <state width="1345" height="227" key="GridCell.Tab.1.bottom/0.30.1366.738/1428.0.1304.768@0.30.1366.738" timestamp="1588059614208" />
+    <state width="1345" height="227" key="GridCell.Tab.1.bottom/0.30.1366.738@0.30.1366.738" timestamp="1588021432528" />
+    <state width="1345" height="227" key="GridCell.Tab.1.center" timestamp="1588059614208">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state width="1345" height="227" key="GridCell.Tab.1.center/0.30.1366.738/1366.30.1366.738@0.30.1366.738" timestamp="1586800062616" />
+    <state width="1345" height="227" key="GridCell.Tab.1.center/0.30.1366.738/1428.0.1304.768@0.30.1366.738" timestamp="1588059614208" />
+    <state width="1345" height="227" key="GridCell.Tab.1.center/0.30.1366.738@0.30.1366.738" timestamp="1588021432527" />
+    <state width="1345" height="227" key="GridCell.Tab.1.left" timestamp="1588059614208">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state width="1345" height="227" key="GridCell.Tab.1.left/0.30.1366.738/1366.30.1366.738@0.30.1366.738" timestamp="1586800062616" />
+    <state width="1345" height="227" key="GridCell.Tab.1.left/0.30.1366.738/1428.0.1304.768@0.30.1366.738" timestamp="1588059614208" />
+    <state width="1345" height="227" key="GridCell.Tab.1.left/0.30.1366.738@0.30.1366.738" timestamp="1588021432527" />
+    <state width="1345" height="227" key="GridCell.Tab.1.right" timestamp="1588059614208">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state width="1345" height="227" key="GridCell.Tab.1.right/0.30.1366.738/1366.30.1366.738@0.30.1366.738" timestamp="1586800062616" />
+    <state width="1345" height="227" key="GridCell.Tab.1.right/0.30.1366.738/1428.0.1304.768@0.30.1366.738" timestamp="1588059614208" />
+    <state width="1345" height="227" key="GridCell.Tab.1.right/0.30.1366.738@0.30.1366.738" timestamp="1588021432528" />
+    <state width="1345" height="227" key="GridCell.Tab.2.bottom" timestamp="1588059614208">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state width="1345" height="227" key="GridCell.Tab.2.bottom/0.30.1366.738/1366.30.1366.738@0.30.1366.738" timestamp="1586800062616" />
+    <state width="1345" height="227" key="GridCell.Tab.2.bottom/0.30.1366.738/1428.0.1304.768@0.30.1366.738" timestamp="1588059614208" />
+    <state width="1345" height="227" key="GridCell.Tab.2.bottom/0.30.1366.738@0.30.1366.738" timestamp="1588021418519" />
+    <state width="1345" height="227" key="GridCell.Tab.2.center" timestamp="1588059614208">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state width="1345" height="227" key="GridCell.Tab.2.center/0.30.1366.738/1366.30.1366.738@0.30.1366.738" timestamp="1586800062616" />
+    <state width="1345" height="227" key="GridCell.Tab.2.center/0.30.1366.738/1428.0.1304.768@0.30.1366.738" timestamp="1588059614208" />
+    <state width="1345" height="227" key="GridCell.Tab.2.center/0.30.1366.738@0.30.1366.738" timestamp="1588021418519" />
+    <state width="1345" height="227" key="GridCell.Tab.2.left" timestamp="1588059614208">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state width="1345" height="227" key="GridCell.Tab.2.left/0.30.1366.738/1366.30.1366.738@0.30.1366.738" timestamp="1586800062616" />
+    <state width="1345" height="227" key="GridCell.Tab.2.left/0.30.1366.738/1428.0.1304.768@0.30.1366.738" timestamp="1588059614208" />
+    <state width="1345" height="227" key="GridCell.Tab.2.left/0.30.1366.738@0.30.1366.738" timestamp="1588021418519" />
+    <state width="1345" height="227" key="GridCell.Tab.2.right" timestamp="1588059614208">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state width="1345" height="227" key="GridCell.Tab.2.right/0.30.1366.738/1366.30.1366.738@0.30.1366.738" timestamp="1586800062616" />
+    <state width="1345" height="227" key="GridCell.Tab.2.right/0.30.1366.738/1428.0.1304.768@0.30.1366.738" timestamp="1588059614208" />
+    <state width="1345" height="227" key="GridCell.Tab.2.right/0.30.1366.738@0.30.1366.738" timestamp="1588021418519" />
+    <state width="1345" height="227" key="GridCell.Tab.3.bottom" timestamp="1588059614209">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state width="1345" height="227" key="GridCell.Tab.3.bottom/0.30.1366.738/1366.30.1366.738@0.30.1366.738" timestamp="1586800062617" />
+    <state width="1345" height="227" key="GridCell.Tab.3.bottom/0.30.1366.738/1428.0.1304.768@0.30.1366.738" timestamp="1588059614209" />
+    <state width="1345" height="227" key="GridCell.Tab.3.bottom/0.30.1366.738@0.30.1366.738" timestamp="1588021434360" />
+    <state width="1345" height="227" key="GridCell.Tab.3.center" timestamp="1588059614208">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state width="1345" height="227" key="GridCell.Tab.3.center/0.30.1366.738/1366.30.1366.738@0.30.1366.738" timestamp="1586800062617" />
+    <state width="1345" height="227" key="GridCell.Tab.3.center/0.30.1366.738/1428.0.1304.768@0.30.1366.738" timestamp="1588059614208" />
+    <state width="1345" height="227" key="GridCell.Tab.3.center/0.30.1366.738@0.30.1366.738" timestamp="1588021434360" />
+    <state width="1345" height="227" key="GridCell.Tab.3.left" timestamp="1588059614208">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state width="1345" height="227" key="GridCell.Tab.3.left/0.30.1366.738/1366.30.1366.738@0.30.1366.738" timestamp="1586800062617" />
+    <state width="1345" height="227" key="GridCell.Tab.3.left/0.30.1366.738/1428.0.1304.768@0.30.1366.738" timestamp="1588059614208" />
+    <state width="1345" height="227" key="GridCell.Tab.3.left/0.30.1366.738@0.30.1366.738" timestamp="1588021434360" />
+    <state width="1345" height="227" key="GridCell.Tab.3.right" timestamp="1588059614209">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state width="1345" height="227" key="GridCell.Tab.3.right/0.30.1366.738/1366.30.1366.738@0.30.1366.738" timestamp="1586800062617" />
+    <state width="1345" height="227" key="GridCell.Tab.3.right/0.30.1366.738/1428.0.1304.768@0.30.1366.738" timestamp="1588059614208" />
+    <state width="1345" height="227" key="GridCell.Tab.3.right/0.30.1366.738@0.30.1366.738" timestamp="1588021434360" />
+    <state x="521" y="101" key="RollbackChangesDialog" timestamp="1587349144322">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state x="521" y="101" key="RollbackChangesDialog/0.30.1366.738@0.30.1366.738" timestamp="1587349144322" />
+    <state x="186" y="44" key="SettingsEditor" timestamp="1587140856645">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state x="186" y="44" key="SettingsEditor/0.30.1366.738/1366.30.1366.738@0.30.1366.738" timestamp="1586731674232" />
+    <state x="186" y="44" key="SettingsEditor/0.30.1366.738@0.30.1366.738" timestamp="1587140856645" />
+    <state x="275" y="134" key="Vcs.Push.Dialog.v2" timestamp="1588730270600">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state x="275" y="134" key="Vcs.Push.Dialog.v2/0.30.1366.738/1366.30.1366.738@0.30.1366.738" timestamp="1588730270600" />
+    <state x="275" y="134" key="Vcs.Push.Dialog.v2/0.30.1366.738@0.30.1366.738" timestamp="1588710890804" />
+    <state x="337" y="30" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1586558811807">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state x="337" y="30" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.30.1366.738@0.30.1366.738" timestamp="1586558811807" />
+    <state x="549" y="132" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1587009523391">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state x="549" y="132" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.30.1366.738@0.30.1366.738" timestamp="1587009523391" />
+    <state x="494" y="317" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587060858895">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state x="494" y="317" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.30.1366.738@0.30.1366.738" timestamp="1587060858895" />
+    <state x="247" y="137" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1586726123863">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state x="247" y="137" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.30.1366.738/1366.30.1366.738@0.30.1366.738" timestamp="1586726123863" />
+    <state x="390" y="33" width="586" height="732" key="find.popup" timestamp="1586638825510">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state x="390" y="33" width="586" height="732" key="find.popup/0.30.1366.738/1366.30.1366.738@0.30.1366.738" timestamp="1586638825510" />
+    <state x="371" y="187" key="git4idea.merge.GitPullDialog" timestamp="1587060648411">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state x="371" y="187" key="git4idea.merge.GitPullDialog/0.30.1366.738@0.30.1366.738" timestamp="1587060648411" />
+    <state x="1705" y="180" key="run.anything.popup" timestamp="1588718065689">
+      <screen x="1366" y="30" width="1366" height="738" />
+    </state>
+    <state x="339" y="180" width="672" height="677" key="run.anything.popup/0.30.1366.738/1366.30.1366.738@0.30.1366.738" timestamp="1586731967685" />
+    <state x="1705" y="180" key="run.anything.popup/0.30.1366.738/1366.30.1366.738@1366.30.1366.738" timestamp="1588718065689" />
+    <state x="339" y="180" key="run.anything.popup/0.30.1366.738@0.30.1366.738" timestamp="1587146786634" />
+    <state x="1712" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1588656070073">
+      <screen x="1366" y="30" width="1366" height="738" />
+    </state>
+    <state x="1712" y="89" width="672" height="678" key="search.everywhere.popup/0.30.1366.738/1366.30.1366.738@1366.30.1366.738" timestamp="1588656070073" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.30.1366.738@0.30.1366.738" timestamp="1587007046247" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/tests/product.test.js</url>
+          <line>133</line>
+          <option name="temporary" value="true" />
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/tests/user.test.js</url>
+          <line>54</line>
+          <option name="temporary" value="true" />
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/controllers/product.js</url>
+          <line>63</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
