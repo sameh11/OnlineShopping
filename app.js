@@ -11,8 +11,10 @@ var setUpPassport = require("./models/passport");
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productRouter = require('./routes/products');
+const bodyParser = require("body-parser");
 
 var app = express();
+
 const mongoURL = process.env.MONGO_URL || 'mongodb://localhost:27017/shop';
 const port = process.env.PORT || 3000;
 mongoose.connect(mongoURL, {
@@ -20,9 +22,33 @@ mongoose.connect(mongoURL, {
     useUnifiedTopology: true
 }).then(() => console.log('Connected to MongoDB...')).catch(err => console.log('Failed to connect to Mongodb,', err.message));
 
+app.listen(port);
 // view engine setup
 // app.set('views', path.join(__dirname, 'views'));
 // app.set('view engine', 'pug');
+
+
+
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+app.use(bodyParser.json());
+
+//to allow making req from angular app
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept,Authorization",
+    );
+    res.setHeader(
+      "Access-Control-Allow-Methods",
+      "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+    );
+    next();
+  });
+
+
 setUpPassport();
 app.use(logger('dev'));
 app.use(express.json());

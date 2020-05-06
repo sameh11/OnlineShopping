@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 var bcrypt = require("bcrypt-nodejs");
+var formidable = require('formidable');
 var SALT_FACTOR = 10;
 
 const userSchema = new mongoose.Schema({
@@ -23,7 +24,7 @@ const userSchema = new mongoose.Schema({
         enum: ['MALE', 'FEMALE', 'Other'],
         default: 'MALE'
     },
-    image: [],
+     image: {type:String},
     createdAt: {type: Date, default: Date.now()},
     deletedAt: {type: Date},
     editeddAt: {type: Date},

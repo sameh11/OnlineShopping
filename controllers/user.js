@@ -9,17 +9,19 @@ const getUserParams = (body) => {
         displayName: body.displayName,
         email: body.email,
         password: body.password,
-        gender: body.gender,
+        gender: body.gender
     }
 };
 
 exports.createUser = async (req, res, next) => {
+    const url = req.protocol + "://" + req.get('host');
     const {error} = validateUser({...getUserParams(req.body)});
     if (error) {
         return res.status(400).send(error);
     }
 
     let newUser = new User({...getUserParams(req.body)});
+    newUser.image = url + "/uploads/" + req.file.filename;
     await newUser.save((err, result) => {
         if (err) {
             return res.status(400).send(err);
