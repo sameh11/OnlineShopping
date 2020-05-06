@@ -28,14 +28,25 @@ let upload = multer({
     },
     fileFilter: fileFilter
 });
+var jwt = require('express-jwt');
+var auth = jwt({
+    secret: 'MY_SECRET',
+    userProperty: 'payload'
+});
 
 function ensureAuthenticated(req, res, next) {
-    if (req.isAuthenticated()) {
-        next();
-    } else {
-        req.flash("info", "You must be logged in to see this page.");
-        res.status(400).send({'error': 'not authenticated'});
+    if (!req.payload._id) {
+        res.status(401).json({
+            "message": "UnauthorizedError: private profile"
+        });
     }
+    next();
+    // if (req.isAuthenticated()) {
+    //     next();
+    // } else {
+    //     req.flash("info", "You must be logged in to see this page.");
+    //     res.status(400).send({'error': 'not authenticated'});
+    // }
 }
 
 router.get('/', productController.getProducts);
@@ -43,9 +54,9 @@ router.get('/:id', productController.getProductsById);
 router.get('/:name', productController.getProductsByName);
 router.get('/:category', productController.getProductsByCategory);
 router.get('/:status', productController.getProductsByStatus);
-router.post('/new', [ensureAuthenticated, admin], productController.createProduct);
+router.post('/new', [auth, ensureAuthenticated, admin], productController.createProduct);
 router.post('/edit/:id', [ensureAuthenticated, admin, validateObjectID], productController.editProduct);
 router.post('/upload/:id', [ensureAuthenticated, admin, validateObjectID], upload.single('image'), productController.uploadImage);
-router.post('/delete/:id', [ensureAuthenticated, admin,validateObjectID], productController.deleteProduct);
+router.post('/delete/:id', [ensureAuthenticated, admin, validateObjectID], productController.deleteProduct);
 
 module.exports = router;

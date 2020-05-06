@@ -15,7 +15,7 @@ var cors = require('cors')
 
 
 var app = express();
-app.use(cors())
+
 
 const mongoURL = process.env.MONGO_URL || 'mongodb://localhost:27017/shop';
 const port = process.env.PORT || 3000;
@@ -35,6 +35,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
 app.use(session({secret: "TKRv0IJs=HYqrvagQ#&!F!%V]Ww/4KiVs$s,<<MX",resave: true,saveUninitialized: true}));
 app.use(flash());
+app.use(cors())
+
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -42,6 +44,12 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productRouter);
 // app.use('/orders', ordersRouter);
+app.use(function (err, req, res, next) {
+    if (err.name === 'UnauthorizedError') {
+        res.status(401);
+        res.json({"message" : err.name + ": " + err.message});
+    }
+});
 
 app.use(function (req, res, next) {
     next(createError(404));
@@ -50,8 +58,8 @@ app.use(function (req, res, next) {
 app.use(function (err, req, res, next) {
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
-    res.status(err.status || 500);
-    res.send('error');
+    // res.status(err.status || 500);
+    // res.send('error');
 });
 
 module.exports = app;

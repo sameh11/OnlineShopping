@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 var bcrypt = require("bcrypt-nodejs");
+const jwt = require('jsonwebtoken');
+
 var SALT_FACTOR = 10;
 
 const userSchema = new mongoose.Schema({
@@ -74,6 +76,17 @@ userSchema.methods.checkPassword = function (guess, done) {
     bcrypt.compare(guess, this.password, function (err, isMatch) {
         done(err, isMatch);
     });
+};
+userSchema.methods.generateJwt = function() {
+    var expiry = new Date();
+    expiry.setDate(expiry.getDate() + 7);
+
+    return jwt.sign({
+        _id: this._id,
+        email: this.email,
+        username: this.username,
+        exp: parseInt(expiry.getTime() / 1000),
+    }, "MY_SECRET"); // DO NOT KEEP YOUR SECRET IN THE CODE!
 };
 let User = mongoose.model("User", userSchema);
 module.exports = User;

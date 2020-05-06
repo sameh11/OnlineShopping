@@ -4,6 +4,7 @@ const passport = require("passport");
 const admin = require('./middlewares/admin')
 const validateObjectID = require('./middlewares/validateObjectId')
 const UserController = require('../controllers/user');
+const jwt = require('jsonwebtoken');
 
 function ensureAuthenticated(req, res, next) {
     if (req.isAuthenticated()) {
@@ -35,18 +36,25 @@ router.post('/auth/register', UserController.createUser, function (req, res, nex
         if (err) return res.status(400).send(err);
         req.login(user, function (err) {
             if (err) return res.status(400).send(`${err}`);
-            res.status(200).json({"statusCode" : 200 ,"user" : req.user});
+            let token;
+            token = user.generateJwt();
+            res.status(200).json({"user" : req.user, "token" : token});
             // next()
         });
     })(req, res, next);
 });
 router.post("/auth/login", function (req, res, next) {
     passport.authenticate('local', function (err, user, info) {
-        if (info) {return res.status(400).send(info)}
-        if (err) return res.status(400).send(err);
+        let token;
+
+        if (info) {return res.status(400).send({infoError: info})}
+        if (err) return res.status(400).send({err: err});
+
         req.login(user, function (err) {
-            if (err) return res.status(400).send(`${err}`);
-            res.status(200).json({"statusCode" : 200 ,"user" : req.user});
+            if (err) return res.status(400).send(`${{login: err}}`);
+
+            token = user.generateJwt();
+            res.status(200).json({"user" : req.user, "token" : token});
             // next()
         });
     })(req, res, next);
