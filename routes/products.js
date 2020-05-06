@@ -55,8 +55,8 @@ router.get('/:name', productController.getProductsByName);
 router.get('/:category', productController.getProductsByCategory);
 router.get('/:status', productController.getProductsByStatus);
 router.post('/new', [auth, ensureAuthenticated, admin], productController.createProduct);
-router.post('/edit/:id', [ensureAuthenticated, admin, validateObjectID], productController.editProduct);
-router.post('/upload/:id', [ensureAuthenticated, admin, validateObjectID], upload.single('image'), productController.uploadImage);
-router.post('/delete/:id', [ensureAuthenticated, admin, validateObjectID], productController.deleteProduct);
+router.post('/edit/:id', [auth,ensureAuthenticated, admin, validateObjectID], productController.editProduct);
+router.post('/upload/:id', [auth,ensureAuthenticated, admin, validateObjectID], upload.single('image'), productController.uploadImage);
+router.post('/delete/:id', [auth,ensureAuthenticated, admin, validateObjectID], productController.deleteProduct);
 
 module.exports = router;
