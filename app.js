@@ -12,7 +12,9 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productRouter = require('./routes/products');
 var cors = require('cors')
-
+const redis = require('redis');
+var RedisStore = require('connect-redis')(session);
+let redisClient = redis.createClient()
 
 var app = express();
 
@@ -33,7 +35,10 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
-app.use(session({secret: "TKRv0IJs=HYqrvagQ#&!F!%V]Ww/4KiVs$s,<<MX",resave: true,saveUninitialized: true}));
+// app.use(express.session({ secret: "keyboard cat", store: new RedisStore }));
+app.use(session({store: new RedisStore({ client: redisClient }),secret: "TKRv0IJs=HYqrvagQ#&!F!%V]Ww/4KiVs$s,<<MX",resave: false,saveUninitialized: true}));
+
+
 app.use(flash());
 app.use(cors())
 
