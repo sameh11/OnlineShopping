@@ -1,4 +1,3 @@
-var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -12,9 +11,13 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productRouter = require('./routes/products');
 var cors = require('cors')
-const redis = require('redis');
-var RedisStore = require('connect-redis')(session);
-let redisClient = redis.createClient()
+// const redis = require('redis');
+// var RedisStore = require('connect-redis')(session);
+// let redisClient = redis.createClient({host: 'localhost',
+//     port: 6123,
+//     password: 'my secret',
+//     db: 1,
+// })
 
 var app = express();
 
@@ -36,7 +39,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
 // app.use(express.session({ secret: "keyboard cat", store: new RedisStore }));
-app.use(session({store: new RedisStore({ client: redisClient }),secret: "TKRv0IJs=HYqrvagQ#&!F!%V]Ww/4KiVs$s,<<MX",resave: false,saveUninitialized: true}));
+app.use(session({/*store: new RedisStore({ client: redisClient }),*/secret: "TKRv0IJs=HYqrvagQ#&!F!%V]Ww/4KiVs$s,<<MX",resave: false,saveUninitialized: true}));
 
 
 app.use(flash());

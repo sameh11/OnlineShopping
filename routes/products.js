@@ -35,12 +35,15 @@ var auth = jwt({
 });
 
 function ensureAuthenticated(req, res, next) {
+    console.log("ensureAuthenticated")
     if (!req.payload._id) {
         res.status(401).json({
             "message": "UnauthorizedError: private profile"
         });
     }
-    next();
+    if (req.isAuthenticated())
+        console.log(req.user)
+        next();
     // if (req.isAuthenticated()) {
     //     next();
     // } else {

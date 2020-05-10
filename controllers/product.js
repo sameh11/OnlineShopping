@@ -17,6 +17,7 @@ getProductParams = (body) => {
 };
 
 exports.createProduct = async (req, res, next) => {
+    console.log('createProduct')
     const {error} = validateProduct(getProductParams(req.body));
     if (error) {
         return res.status(400).send(error.details);
