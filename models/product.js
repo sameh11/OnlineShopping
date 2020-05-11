@@ -6,6 +6,10 @@ const productSchema = new Schema({
         type: String,
         required: [true,'Product "name" is required']
     },
+    description: {
+        type: String,
+        required: [true,'Product "description" is required']
+    },
     category: {
         type: String,
         required: true,
