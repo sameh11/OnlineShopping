@@ -1,8 +1,13 @@
 var mongoose = require('mongoose');
 var seeder = require('mongoose-seed');
-
+const mongoURL = process.env.MONGO_URL || 'mongodb://localhost:27017/shop';
 // Connect to MongoDB via Mongoose
-seeder.connect('mongodb://localhost/sample-dev', function () {
+seeder.connect(process.env.MONGO_URL || 'mongodb://localhost:27017/shop', function () {
+    mongoose.connect(mongoURL, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    }).then(() => console.log('Connected to MongoDB...')).catch(err => console.log('Failed to connect to Mongodb,', err.message));
+
     // Load Mongoose models
     seeder.loadModels([
         'models/product.js',
