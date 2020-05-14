@@ -10,6 +10,7 @@ var setUpPassport = require("./models/passport");
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productRouter = require('./routes/products');
+var ordersRouter = require('./routes/orders');
 var cors = require('cors')
 // const redis = require('redis');
 // var RedisStore = require('connect-redis')(session);
@@ -51,7 +52,7 @@ app.use(passport.session());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productRouter);
-// app.use('/orders', ordersRouter);
+app.use('/orders', ordersRouter);
 app.use(function (err, req, res, next) {
     if (err.name === 'UnauthorizedError') {
         res.status(401);

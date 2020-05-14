@@ -5,8 +5,16 @@ const ObjectId = mongoose.Types.ObjectId;
 
 getOrderParams = (body) => {
     let x = new Order({
-        user_id: body._id,
+        user_id: body.user._id,
         products: [body.products],
+        totalPrice: body.totalPrice,
+        billingAddress: {
+            country: body.billingAddress.country,
+            address: body.billingAddress.address,
+            zip: body.billingAddress.zip,
+            phone: body.billingAddress.phone,
+            email: body.billingAddress.email,
+        },
         status: body.status,
         createdAt: Date.now(),
     });
@@ -34,7 +42,6 @@ exports.createOrder = async (req, res, next) => {
         );
 };
 
-//
 exports.editOrder = async (req, res, next) => {
     let id = new ObjectId(req.params.id);
     const {error} = validateOrder(getOrderParams(req.body));

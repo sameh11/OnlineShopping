@@ -12,6 +12,14 @@ const orderSchema = Joi.object({
         required: true,
         ref: 'Product'
     }],
+    totalPrice: Joi.string().required(),
+    billingAddress: {
+        country: {type: Joi.string(), default: 'PENDING'},
+        address: Joi.string().required(),
+        zip: Joi.string().required(),
+        phone: Joi.string().required(),
+        email: Joi.string().required(),
+    },
     //consider the function now if errors happened
     createdAt: {type: Date, default: Date.now()},
     closedAt: {type: Date},

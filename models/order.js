@@ -13,6 +13,14 @@ const orderSchema = Schema({
         required: true,
         ref: 'Product'
     }],
+    totalPrice: {type: Number, required: true},
+    billingAddress: {
+        country: {type: String,required: true},
+        address: {type: String,required: true},
+        zip: {type: String,required: true},
+        phone: {type: String,required: true},
+        email: {type: String,required: true},
+    },
     //consider the function now if errors happened
     createdAt: {type: Date, default: Date.now()},
     closedAt: {type: Date},
